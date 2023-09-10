@@ -1,0 +1,10 @@
+C:\Users\Mido\source\repos\Chat Program\bin\Debug\Chat Program.exe.config
+C:\Users\Mido\source\repos\Chat Program\bin\Debug\Chat Program.exe
+C:\Users\Mido\source\repos\Chat Program\bin\Debug\Chat Program.pdb
+C:\Users\Mido\source\repos\Chat Program\obj\Debug\Chat Program.csproj.AssemblyReference.cache
+C:\Users\Mido\source\repos\Chat Program\obj\Debug\Chat_Program.Form1.resources
+C:\Users\Mido\source\repos\Chat Program\obj\Debug\Chat_Program.Properties.Resources.resources
+C:\Users\Mido\source\repos\Chat Program\obj\Debug\Chat Program.csproj.GenerateResource.cache
+C:\Users\Mido\source\repos\Chat Program\obj\Debug\Chat Program.csproj.CoreCompileInputs.cache
+C:\Users\Mido\source\repos\Chat Program\obj\Debug\Chat Program.exe
+C:\Users\Mido\source\repos\Chat Program\obj\Debug\Chat Program.pdb
