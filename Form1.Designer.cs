@@ -40,9 +40,10 @@
             this.textfriendsPort = new System.Windows.Forms.TextBox();
             this.textFriendsIP = new System.Windows.Forms.TextBox();
             this.textmessage = new System.Windows.Forms.TextBox();
-            this.listMessage = new System.Windows.Forms.ListBox();
             this.Startbutton = new System.Windows.Forms.Button();
             this.sendbutton2 = new System.Windows.Forms.Button();
+            this.listMessage = new System.Windows.Forms.ListBox();
+            this.endbutton1 = new System.Windows.Forms.Button();
             this.groupBoxclient1.SuspendLayout();
             this.client2groupBox.SuspendLayout();
             this.SuspendLayout();
@@ -53,9 +54,9 @@
             this.groupBoxclient1.Controls.Add(this.Portlabel2);
             this.groupBoxclient1.Controls.Add(this.textlocolport);
             this.groupBoxclient1.Controls.Add(this.textlocolIp);
-            this.groupBoxclient1.Location = new System.Drawing.Point(12, 12);
+            this.groupBoxclient1.Location = new System.Drawing.Point(12, 167);
             this.groupBoxclient1.Name = "groupBoxclient1";
-            this.groupBoxclient1.Size = new System.Drawing.Size(304, 96);
+            this.groupBoxclient1.Size = new System.Drawing.Size(304, 109);
             this.groupBoxclient1.TabIndex = 0;
             this.groupBoxclient1.TabStop = false;
             this.groupBoxclient1.Text = "client1";
@@ -83,7 +84,7 @@
             this.textlocolport.Location = new System.Drawing.Point(110, 49);
             this.textlocolport.Name = "textlocolport";
             this.textlocolport.Size = new System.Drawing.Size(188, 22);
-            this.textlocolport.TabIndex = 3;
+            this.textlocolport.TabIndex = 2;
             this.textlocolport.TextChanged += new System.EventHandler(this.textlocolport_TextChanged);
             // 
             // textlocolIp
@@ -91,7 +92,7 @@
             this.textlocolIp.Location = new System.Drawing.Point(110, 10);
             this.textlocolIp.Name = "textlocolIp";
             this.textlocolIp.Size = new System.Drawing.Size(188, 22);
-            this.textlocolIp.TabIndex = 2;
+            this.textlocolIp.TabIndex = 1;
             // 
             // client2groupBox
             // 
@@ -99,9 +100,9 @@
             this.client2groupBox.Controls.Add(this.ip2label);
             this.client2groupBox.Controls.Add(this.textfriendsPort);
             this.client2groupBox.Controls.Add(this.textFriendsIP);
-            this.client2groupBox.Location = new System.Drawing.Point(337, 12);
+            this.client2groupBox.Location = new System.Drawing.Point(322, 167);
             this.client2groupBox.Name = "client2groupBox";
-            this.client2groupBox.Size = new System.Drawing.Size(302, 96);
+            this.client2groupBox.Size = new System.Drawing.Size(302, 119);
             this.client2groupBox.TabIndex = 1;
             this.client2groupBox.TabStop = false;
             this.client2groupBox.Text = "client2";
@@ -140,26 +141,17 @@
             // 
             // textmessage
             // 
-            this.textmessage.Location = new System.Drawing.Point(22, 354);
+            this.textmessage.Location = new System.Drawing.Point(22, 311);
             this.textmessage.Multiline = true;
             this.textmessage.Name = "textmessage";
-            this.textmessage.Size = new System.Drawing.Size(496, 60);
-            this.textmessage.TabIndex = 3;
-            // 
-            // listMessage
-            // 
-            this.listMessage.FormattingEnabled = true;
-            this.listMessage.ItemHeight = 16;
-            this.listMessage.Location = new System.Drawing.Point(12, 133);
-            this.listMessage.Name = "listMessage";
-            this.listMessage.Size = new System.Drawing.Size(517, 164);
-            this.listMessage.TabIndex = 4;
+            this.textmessage.Size = new System.Drawing.Size(596, 127);
+            this.textmessage.TabIndex = 6;
             // 
             // Startbutton
             // 
-            this.Startbutton.Location = new System.Drawing.Point(660, 22);
+            this.Startbutton.Location = new System.Drawing.Point(642, 167);
             this.Startbutton.Name = "Startbutton";
-            this.Startbutton.Size = new System.Drawing.Size(116, 75);
+            this.Startbutton.Size = new System.Drawing.Size(146, 46);
             this.Startbutton.TabIndex = 5;
             this.Startbutton.Text = "Start";
             this.Startbutton.UseVisualStyleBackColor = true;
@@ -167,19 +159,40 @@
             // 
             // sendbutton2
             // 
-            this.sendbutton2.Location = new System.Drawing.Point(560, 354);
+            this.sendbutton2.Location = new System.Drawing.Point(642, 340);
             this.sendbutton2.Name = "sendbutton2";
-            this.sendbutton2.Size = new System.Drawing.Size(130, 60);
-            this.sendbutton2.TabIndex = 6;
-            this.sendbutton2.Text = "send";
+            this.sendbutton2.Size = new System.Drawing.Size(146, 98);
+            this.sendbutton2.TabIndex = 7;
+            this.sendbutton2.Text = "Send";
             this.sendbutton2.UseVisualStyleBackColor = true;
             this.sendbutton2.Click += new System.EventHandler(this.sendbutton2_Click);
+            // 
+            // listMessage
+            // 
+            this.listMessage.FormattingEnabled = true;
+            this.listMessage.ItemHeight = 16;
+            this.listMessage.Location = new System.Drawing.Point(12, -3);
+            this.listMessage.Name = "listMessage";
+            this.listMessage.Size = new System.Drawing.Size(778, 164);
+            this.listMessage.TabIndex = 8;
+            this.listMessage.SelectedIndexChanged += new System.EventHandler(this.listMessage_SelectedIndexChanged);
+            // 
+            // endbutton1
+            // 
+            this.endbutton1.Location = new System.Drawing.Point(644, 219);
+            this.endbutton1.Name = "endbutton1";
+            this.endbutton1.Size = new System.Drawing.Size(146, 58);
+            this.endbutton1.TabIndex = 9;
+            this.endbutton1.Text = "End";
+            this.endbutton1.UseVisualStyleBackColor = true;
+            this.endbutton1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.endbutton1);
             this.Controls.Add(this.sendbutton2);
             this.Controls.Add(this.Startbutton);
             this.Controls.Add(this.listMessage);
@@ -187,7 +200,7 @@
             this.Controls.Add(this.client2groupBox);
             this.Controls.Add(this.groupBoxclient1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Chat program";
             this.groupBoxclient1.ResumeLayout(false);
             this.groupBoxclient1.PerformLayout();
             this.client2groupBox.ResumeLayout(false);
@@ -207,13 +220,14 @@
         private System.Windows.Forms.TextBox textfriendsPort;
         private System.Windows.Forms.TextBox textFriendsIP;
         private System.Windows.Forms.TextBox textmessage;
-        private System.Windows.Forms.ListBox listMessage;
         private System.Windows.Forms.Button Startbutton;
         private System.Windows.Forms.Label IPlabel;
         private System.Windows.Forms.Label Portlabel2;
         private System.Windows.Forms.Label Port2label;
         private System.Windows.Forms.Label ip2label;
         private System.Windows.Forms.Button sendbutton2;
+        private System.Windows.Forms.ListBox listMessage;
+        private System.Windows.Forms.Button endbutton1;
     }
 }
 
