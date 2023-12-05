@@ -19,7 +19,7 @@
 
 This project presents a simple yet robust chat application developed with C# Windows Forms and WebSocket communication. 
 Users can engage in real-time messaging over a local network, facilitated by WebSocket technology. 
-The application seamlessly stores chat logs in a SQL Server database, showcasing adept database management skills.
+The application seamlessly stores chat logs in a SQL Server database.
 
 ## Features
 
