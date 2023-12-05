@@ -2,11 +2,10 @@
 
 ![Chat App Screenshot](https://github.com/Mido191020/Chat_Program/raw/master/Screenshot%202023-09-18%20152638.png)
 
-A simple chat application built using C# Windows Forms and WebSocket communication. This application allows users to exchange messages over a local network using UDP and stores chat logs in a SQL Server database.
 
 ## Table of Contents
 
-- [About](#About)
+- [About](#about)
 - [Features](#features)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -17,6 +16,7 @@ A simple chat application built using C# Windows Forms and WebSocket communicati
 - [Contributing](#contributing)
 
 ## About
+
 This project presents a simple yet robust chat application developed with C# Windows Forms and WebSocket communication. 
 Users can engage in real-time messaging over a local network, facilitated by WebSocket technology. 
 The application seamlessly stores chat logs in a SQL Server database, showcasing adept database management skills.
