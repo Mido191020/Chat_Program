@@ -1,81 +1,31 @@
-# Chat App with C# Windows Forms and WebSocket
+# P2P UDP Chat Program
 
 ![Chat App Screenshot](https://github.com/Mido191020/Chat_Program/raw/master/Screenshot%202023-09-18%20152638.png)
 
 
-## Table of Contents
-
-- [About](#about)
-- [Features](#features)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [WebSocket Communication](#websocket-communication)
-- [Database Configuration](#database-configuration)
-- [Contributing](#contributing)
-
-## About
-
-This project presents a simple yet robust chat application developed with C# Windows Forms and WebSocket communication. 
-Users can engage in real-time messaging over a local network, facilitated by WebSocket technology. 
-The application seamlessly stores chat logs in a SQL Server database.
-
+A lightweight, peer-to-peer chat application built in C# and Windows Forms. This application enables two users on the same network (or across the internet with port forwarding) to communicate seamlessly using the UDP protocol. It also logs all messages to a local SQL Server database for historical persistence.
 ## Features
-
-- Real-time chat between users on the same local network.
-- Database storage of chat messages with sender and receiver IP addresses.
-- User-friendly Windows Forms interface.
-
-## Getting Started
-
-### Prerequisites
-
-Before running the application, make sure you have the following prerequisites:
-
-- Visual Studio with C# support (for development).
-- SQL Server (for database storage).
-
-### Installation
-
-1. **Clone this repository** to your local machine:
-
-   ```shell
-   git clone https://github.com/yourusername/your-repo-name.git
-   ```
-
-2. **Open the project in Visual Studio.**
-
-3. **Modify the `connectionString` variable** in `Form1.cs` to point to your SQL Server instance:
-
-   ```csharp
-   private string connectionString = "Server=YOUR_SERVER;Database=client logs;Integrated Security=True;";
-   ```
-
-4. **Build and run the application.**
-
+- **Peer-to-Peer Communication**: Connects directly to a friend using IP Addresses and Ports.
+- **Asynchronous Networking**: Implements non-blocking `BeginReceiveFrom` socket logic to keep the UI responsive.
+- **Persistent Chat Logs**: Automatically saves sent and received messages to a Microsoft SQL database.
+- **Local Network Auto-Discovery**: Automatically grabs the executing machine's IPv4 address.
+## Architecture
+This system utilizes a P2P architectural model. There is no central server. Both instances of the application act identically: binding to a local port to listen for incoming UDP datagrams while simultaneously opening a route to a remote host's IP and port to send outgoing messages.
+## Technologies Used
+- **Language**: C#
+- **Framework**: .NET Framework (Windows Forms)
+- **Networking**: `System.Net.Sockets` (UDP)
+- **Database**: Microsoft SQL Server (`System.Data.SqlClient`)
+## Installation and Setup
+1. **Database Setup**:
+   - Ensure you have a local instance of SQL Server running.
+   - Create a database named `client logs`.
+   - Create a table named `clientlogs` with columns: `SenderIP`, `ReceiverIP`, `MessageText`, `MessageDateTime`, `IPAddress`, `LogDateTime`.
+   - *Note*: Ensure your connection string in `Form1.cs` matches your SQL local instance name (e.g., `Server=YOUR-PC-NAME;Database=client logs;Integrated Security=True;`).
+2. **Build**: Open `Chat Program.sln` in Visual Studio and hit Build, or compile via MSBuild.
 ## Usage
-
-1. Start the application on **two different computers within the same local network**.
-2. Enter the **local IP address** of each computer and **port numbers** in the appropriate fields.
-3. Click the **"Start" button** to connect the two computers.
-4. Send messages in the chat box, and they will be displayed in real-time on both computers.
-5. Chat messages are stored in the SQL Server database.
-
-## WebSocket Communication
-
-This chat application leverages **WebSocket communication** to enable real-time messaging between users on the same local network. WebSocket is a protocol that provides full-duplex communication channels over a single TCP connection. WebSocket communication enables low-latency, bidirectional messaging, making it suitable for real-time chat applications.
-
-## Database Configuration
-
-You can find the database configuration in the `CheckDatabaseConnection` and `StoreMessageData` methods in `Form1.cs`. Ensure that your SQL Server is configured correctly for this application to work.
-
-## Contributing
-
-If you'd like to contribute to this project, please follow these steps:
-
-1. **Fork the repository.**
-2. Create a new branch for your feature or bug fix: `git checkout -b feature-name`.
-3. Make your changes and commit them: `git commit -m 'Description of your changes'`.
-4. Push to the branch: `git push origin feature-name`.
-5. Create a **pull request on GitHub**.
+1. Run the application.
+2. The **Local IP** will automatically populate. Enter a designated **Local Port** (e.g., `8080`).
+3. Enter your friend's IP in **Friend IP** and their opening port in **Friend Port**.
+4. Click **Start**. The app will bind the ports and load previous database chat history.
+5. Type your message and click **Send**.
